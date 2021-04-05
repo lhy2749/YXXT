@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="/static/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/static/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/dist/css/ace.min.css" />
+<link rel="stylesheet" href="/static/dist/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/static/dist/layui/css/layui.css" />
+<link rel="stylesheet" href="/static/dist/css/sjld_style.css">
+<script src="/static/dist/js/jquery.min.js"></script>
+<script src="/static/dist/js/jquery.dataTables.min.js"></script>
+<script src="/static/dist/js/layer/layer.js"></script>
+<link href="/static/dist/css/datetime.css" rel="stylesheet" />
+<script src="/static/dist/layui-new/layui.js"></script>
+<script src="/static/dist/js/datetime.js"></script>
+<style type="">
+.dataTable th:first-child:after , .dataTable th:last-child:after {
+  display:none; 
+}
+</style>
+<title>用户列表</title>
+</head>
+<body>
+	<div class="page-content clearfix" style="margin-top:15px">
+		<div id="Member_Ratings">
+			<div class="d_Confirm_Order_style">
+              <ul class="layui-timeline">
+                  <!--第1条-->
+                  <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis"></i>
+                    <div class="layui-timeline-content layui-text">
+                      <h3 class="layui-timeline-title">2019-08-28</h3>
+                      <p>
+                        标题：#男子持刀砸门被90后女孩反杀#丽江反杀案律师正式向云南省检察院提交《撤回起诉申请书》
+                        <br>关键短语：持刀砸门；反杀
+                      </p>
+                    </div>
+                  </li>
+                  <!--第2条-->
+                  <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis"></i>
+                    <div class="layui-timeline-content layui-text">
+                      <h3 class="layui-timeline-title">2019-08-29</h3>
+                      <p>
+                        标题：丽江男子持刀遭女子反杀 女方律师：系典型正当防卫
+                        <br>关键短语：持刀反杀；正当防卫
+                      </p>
+                    </div>
+                  </li>
+                  <!--第3条-->
+                  <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis"></i>
+                    <div class="layui-timeline-content layui-text">
+                      <h3 class="layui-timeline-title">2019-12-31</h3>
+                      <p>
+                        标题：“丽江反杀案”唐雪的防卫行为系正当防卫，依法不负刑事责任
+                        <br>关键短语：正当防卫；不负责任
+                      </p>
+                    </div>
+                  </li>
+                <!--第4条-->
+                  <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis"></i>
+                    <div class="layui-timeline-content layui-text">
+                      <h3 class="layui-timeline-title">2020-01-01</h3>
+                      <p>
+                        标题：“丽江反杀案”唐雪被认定系正当防卫 死者家属：不接受将申诉
+                        <br>关键短语：正当防卫；死者家属；申诉
+                      </p>
+                    </div>
+                  </li>
+                <!--第5条-->
+                  <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis"></i>
+                    <div class="layui-timeline-content layui-text">
+                      <h3 class="layui-timeline-title">2020-01-03</h3>
+                      <p>
+                        标题：云南检方通报丽江反杀案：唐雪系正当防卫 依法不负刑事责任
+                        <br>关键短语：云南检方；正当防卫；不负责任
+                      </p>
+                    </div>
+                  </li>
+                  <!--第6条-->
+                  <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis"></i>
+                    <div class="layui-timeline-content layui-text">
+                      <h3 class="layui-timeline-title">2020-04-11</h3>
+                      <p>
+                        标题：云南退役女兵唐雪正当防卫案：解读民法典中的紧急自卫权
+                        <br>关键短语：民法典；紧急自卫权
+                      </p>
+                    </div>
+                  </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="dataid" d="{{data.sjbh}}" style="display:none"></div>
+</body>
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-xs" lay-event="edit" style="font-size: 15px;">查看</a>
+</script>
+
+<script>
+var sjbh = document.getElementById('dataid').getAttribute('d');
+layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#test'
+    ,url:'/getwlyqbyid?sjbh='+sjbh
+    ,toolbar: '#toolbarDemo'
+    ,defaultToolbar: ['filter', 'exports', 'print', {
+      title: '提示'
+      ,layEvent: 'LAYTABLE_TIPS'
+      ,icon: 'layui-icon-tips'
+    }]
+    ,title: '用户数据表'
+    ,page: true
+    ,cols: [[
+      {field:'xh', title:'序号', width:70,align:'center'}
+      ,{field:'yqbh', title:'舆情编号',hide:true}
+      ,{field:'yqbt', title:'舆情标题',align:'center'}
+      ,{field:'hbsj', title:'获取时间',width:110,align:'center'}
+      ,{field:'yqrm', title: '舆情人名', templet: function(d) {
+        return cutgjdy(d.yqrm);
+        }, width: 180,align:'center'}
+      ,{fixed:'right', title:'操作', toolbar: '#barDemo', width:120,align:'center'}
+    ]]
+  });
+
+    //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        console.log(data)
+        // obj.del();
+        // layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      window.open('/ckxq?yqbh='+data.yqbh)
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+      case 'isAll':
+        layer.msg(checkStatus.isAll ? '全选': '未全选');
+      break;
+      //自定义头工具栏右侧图标 - 提示
+      case 'LAYTABLE_TIPS':
+        layer.alert('这是工具栏右侧自定义的一个图标按钮');
+      break;
+    };
+  });
+});
+</script>
+<script>
+    function cutgjdy(gjdy){
+        if (gjdy.length>7){
+            return gjdy.substring(0,9)+"..";
+        }else{
+            return gjdy
+        }
+
+    }
+</script>
+</html>
+<script>
+    jQuery(function($) {
+        var oTable1 = $('#sample-table').dataTable({
+            "bStateSave": false, //状态保存
+            "aoColumnDefs": [{
+                    "orderable": false,
+                    "aTargets": [0,4]
+                } // 制定列不参与排序
+            ]
+        })
+    })
+</script>

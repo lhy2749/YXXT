@@ -1,0 +1,68 @@
+ /*header开始*/
+ .t_title {
+     width: 100%;
+     height: 100%;
+     text-align: center;
+     font-size: 2.0em;
+     line-height: 55px;
+     color: #fff;
+ }
+  .fbt_title {
+     width: 100%;
+     height: 80%;
+     text-align: center;
+     margin-top:-60px;
+     font-size: 1.4em;
+     line-height:10px;
+     color: #fff;
+ }
+ 
+
+ .bg_header {
+     width: 100%;
+     height: 120px;
+     background: url(../images/title.png) no-repeat;
+     background-size: 100% 100%;
+ }
+
+ .weather-box {
+     margin: 0 auto;
+     margin-top: 8px;
+     width: 15rem;
+     height: 2rem;
+     border: 1px solid #0E94EA;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+
+     -webkit-box-align: center;
+
+     -ms-flex-align: center;
+     align-items: center;
+ }
+
+ .weather-box > .data1 {
+     width: 7rem;
+     height: 2rem;
+     font-size: 1rem;
+     line-height: 34px;
+     color: #cdddf7;
+     text-align: center;
+     margin: 0 auto;
+     border-right: 2px solid #cdddf7;
+ }
+
+ .weather-box > .data {
+     width: 7rem;
+     height: 2rem;
+ }
+
+ .data > p {
+     font-size: 1rem;
+     line-height: 34px;
+     color: #cdddf7;
+     text-align: center;
+     margin: 0 auto;
+ }
+
+ 

@@ -1,0 +1,34 @@
+
+body{
+min-width:700px}
+	.self-icion{
+	  background-image: url('../images/date.png');
+	  background-size: auto 18px;
+	  background-repeat: no-repeat;
+	  background-position: right center;
+	  width: 274px;
+	  text-align:center;
+	}
+	.date-input{
+		width: 274px !important; 
+		height:38px !important;
+	}
+	.bao{
+		width:auto;
+	}
+	@media screen and (max-width:800px) {
+	.uij{
+		    padding-left: 23px;
+	}
+}
+@media screen and (max-width:1400px) and (min-width:800px) {
+	.uij{
+		    padding: 20px 11px 0px;
+	}
+	.search_btn{
+		margin-left: 30px;
+	}
+	.date-head{
+		width:100%;	
+	}
+}

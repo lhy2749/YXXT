@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+
+
+/*去掉a标签的虚线框，避免出现奇怪的选中区域*/
+:focus {
+    outline: 0;
+}
+
+/* yellow_button */
+.yellow_button {
+    background: url(images/yellow_button.png);
+    border: none;
+    cursor: pointer;
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    background-position: 0 0;
+    width: 139px;
+}
+
+
+#formbox .yellow_button {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#formbox .highlight1 {
+    border: 1px solid #EFA100;
+    outline: 2px solid #FFDC97;
+    *border: 2px solid #ffcc66;
+    *padding: 3px 2px;
+}
+
+#formbox .highlight2 {
+    border: 1px solid #f00;
+    outline: 1px solid #FFC1C1;
+    color: #f00;
+}

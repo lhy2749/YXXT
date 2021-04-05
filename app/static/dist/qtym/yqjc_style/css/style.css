@@ -1,0 +1,66 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+/***
+ */
+
+
+
+a,
+a:focus {
+    outline: none;
+}
+
+.usual {
+    margin-top: -10px
+}
+
+/*tab*/
+.itab {
+    height: 36px;
+    border-bottom: solid 1px #d0dee5;
+    position: relative;
+    border-left: solid 1px #d3dbde;
+}
+
+.itab ul li {
+    float: left;
+    height: 37px;
+    line-height: 37px;
+    background: url(../images/itabbg.png) repeat-x;
+    border-right: solid 1px #d3dbde;
+}
+
+.itab ul li a {
+    font-size: 14px;
+    color: #000;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.itab ul li a.selected {
+    height: 37px;
+    display: block;
+    background: url(../images/itabbg1.png) repeat-x;
+    font-weight: bold;
+}
+
+.tabson {
+    margin: 18px 0px;
+}
+
+.formtext {
+    height: 45px;
+    padding-left: 25px;
+    line-height: 20px;
+    color: #848383;
+}
+
+.formtext b {
+    color: #d70101;
+}
+
+.forminfo b {
+    color: #ea2020;
+    padding-left: 3px;
+}

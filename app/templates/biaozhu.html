@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="/static/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/static/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/dist/css/ace.min.css" />
+<link rel="stylesheet" href="/static/dist/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/static/dist/layui/css/layui.css" />
+<link rel="stylesheet" href="/static/dist/css/sjld_style.css">
+<script src="/static/dist/js/jquery.min.js"></script>
+<script src="/static/dist/js/jquery.dataTables.min.js"></script>
+<script src="/static/dist/js/layer/layer.js"></script>
+<link href="/static/dist/css/datetime.css" rel="stylesheet" />
+<script src="/static/dist/layui-new/layui.js"></script>
+<script src="/static/dist/js/datetime.js"></script>
+<style type="">
+.dataTable th:first-child:after , .dataTable th:last-child:after {
+  display:none;
+}
+</style>
+<title>用户列表</title>
+</head>
+<body>
+	<div class="page-content clearfix" style="margin-top:15px">
+		<div id="Member_Ratings">
+			<div class="d_Confirm_Order_style">
+              <table class="layui-hide" id="test" lay-filter="test"></table>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-xs" lay-event="edit" style="font-size: 15px;">标注</a>
+</script>
+
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#test'
+    ,url:'/getbzdata'
+    ,toolbar: '#toolbarDemo'
+    ,defaultToolbar: ['filter', 'exports', 'print', {
+      title: '提示'
+      ,layEvent: 'LAYTABLE_TIPS'
+      ,icon: 'layui-icon-tips'
+    }]
+    ,title: '用户数据表'
+    ,page: true
+    ,cols: [[
+      {field:'xh', title:'序号', width:70,align:'center'}
+      ,{field:'id', title:'舆情编号',hide:true}
+      ,{field:'des', title:'描述',align:'center'}
+      ,{field:'keyword', title:'标题',width:310,align:'center'}
+      ,{fixed:'right', title:'操作', toolbar: '#barDemo', width:120,align:'center'}
+    ]]
+  });
+
+    //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        console.log(data)
+        // obj.del();
+        // layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+        layer.open({
+        type: 2,
+        title: '事件舆情查看',
+        maxmin: false,
+        shadeClose: true, //点击遮罩关闭层
+        shade: 0.4,
+        scrollbar: true,
+        area: ['80%', '90%'],
+        content: '/bzupdate?id='+data.id,
+        zIndex: layer.zIndex,
+        })
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+      case 'isAll':
+        layer.msg(checkStatus.isAll ? '全选': '未全选');
+      break;
+      //自定义头工具栏右侧图标 - 提示
+      case 'LAYTABLE_TIPS':
+        layer.alert('这是工具栏右侧自定义的一个图标按钮');
+      break;
+    };
+  });
+});
+</script>
+<script>
+    function cutgjdy(gjdy){
+        if (gjdy.length>7){
+            return gjdy.substring(0,9)+"..";
+        }else{
+            return gjdy
+        }
+
+    }
+</script>
+</html>
+<script>
+    jQuery(function($) {
+        var oTable1 = $('#sample-table').dataTable({
+            "bStateSave": false, //状态保存
+            "aoColumnDefs": [{
+                    "orderable": false,
+                    "aTargets": [0,4]
+                } // 制定列不参与排序
+            ]
+        })
+    })
+</script>

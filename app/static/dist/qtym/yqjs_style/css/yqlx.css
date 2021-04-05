@@ -1,0 +1,16 @@
+#usual1 li a{
+	color: black;
+}
+.yqlxtab ul li {
+    float: left;
+    line-height: 37px;
+    text-align: center;
+    height: 60px;
+
+}
+.link-jump {
+    top: 8px;
+    height: 60px;
+    position: relative;
+    background-color: transparent;
+}

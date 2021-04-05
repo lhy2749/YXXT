@@ -1,0 +1,15 @@
+        .layui-form-label {
+            width: 100px;
+        }
+
+        .layui-input-block {
+            margin-left: 130px;
+        }
+
+        .cBody {
+            height: 100%;
+            padding: 10px;
+            display: block;
+            overflow-y: auto;
+            position: relative;
+        }

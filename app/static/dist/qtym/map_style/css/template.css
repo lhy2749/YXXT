@@ -1,0 +1,83 @@
+
+ #usual1{
+	margin: 0 auto;
+    width: 100%;
+} 
+.sourceName{
+	    float: left;
+    padding-left: 5rem;
+}
+.link-jump {
+    top: 8px;
+    height: 60px;
+    position: relative;
+    margin-top: 20px;
+    background-color: transparent;
+}
+.link-jump ul li {
+ /*    border: solid 1px #d0dee5; */
+}
+.search-result h3 a{
+	    left: 25px;
+    position: relative;
+}
+.information-footer{
+	    width: 90%;
+    position: absolute;
+    margin: 0 2%;
+}
+
+a,
+a:focus {
+    outline: none;
+}
+
+.usual {
+    margin-top: -10px
+}
+
+.itab ul li {
+    float: left;
+    line-height: 37px;
+    text-align: center;
+    height: 60px;
+}
+
+.itab ul li a {
+    font-size: 16px;
+    color: #000;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.tabson {
+    margin: 18px 0px;
+}
+
+.formtext {
+    height: 45px;
+    padding-left: 25px;
+    line-height: 20px;
+    color: #848383;
+}
+
+.formtext b {
+    color: #d70101;
+}
+
+.forminfo b {
+    color: #ea2020;
+    padding-left: 3px;
+}
+
+
+.hr-line-custom {
+    border-top: 1px dashed #e7eaec;
+    color: #ffffff;
+    background-color: #ffffff;
+    height: 1px;
+    margin: 20px 0;
+}
+#usual1 li a{
+	color: black;
+}

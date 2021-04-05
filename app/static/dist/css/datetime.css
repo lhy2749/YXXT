@@ -1,0 +1,26 @@
+#start,#end{
+    height: 40px;
+    width: 274px;
+    text-align: center;
+    background:url("../images/date.png") center left no-repeat;
+    background-size:30px  30px;
+    background-color: white;
+}
+
+#sarq,#larq,#jarq,#sxjmrq{
+    height: 40px;
+    width: 274px;
+    text-align: center;
+    background:url("../images/date.png") center left no-repeat;
+    background-size:30px  30px;
+    background-color: white;
+}
+/*
+<div class="layui-form">
+</div>
+*/
+/*     
+<link href="<%=basePath%>dist/css/datetime.css" rel="stylesheet" />
+<script src="<%=basePath%>dist/layui-new/layui.js"></script>
+<script src="<%=basePath%>dist/js/datetime.js"></script>
+*/

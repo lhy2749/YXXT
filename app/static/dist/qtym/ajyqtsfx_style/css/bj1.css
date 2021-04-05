@@ -1,0 +1,8 @@
+    .cBody {
+        height: 100%;
+        padding: 10px;
+        display: block;
+        overflow-y: auto;
+        position: relative;
+
+    }

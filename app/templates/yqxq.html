@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="/static/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/static/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/dist/css/ace.min.css" />
+<link rel="stylesheet" href="/static/dist/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/static/dist/layui/css/layui.css" />
+<link rel="stylesheet" href="/static/dist/css/sjld_style.css">
+<script src="/static/dist/js/jquery.min.js"></script>
+<script src="/static/dist/js/jquery.dataTables.min.js"></script>
+<script src="/static/dist/js/layer/layer.js"></script>
+<link href="/static/dist/css/datetime.css" rel="stylesheet" />
+<script src="/static/dist/layui-new/layui.js"></script>
+<script src="/static/dist/js/datetime.js"></script>
+<style type="">
+.dataTable th:first-child:after , .dataTable th:last-child:after {
+  display:none;
+}
+</style>
+<title>查看详情</title>
+</head>
+
+<body style="background: #F3F3F4">
+    <div style="width: 81%;height:800px;background: white;margin: 0 auto;margin-top: 20px">
+        <div style="text-align: center;font-size: 46px;padding-top: 70px">
+            {{data.yqbt}}
+            <div style=" clear:both;"></div>
+        </div>
+        <div style="margin: 0 auto;width: 92%;border-bottom: 0.5px solid grey;padding-top: 10px"></div>
+        <div class="ibox-content" style="font-size:18px;padding-top: 30px;
+                     padding-bottom: 10px;padding-left: 20px;padding-right: 50px">
+            <div class="row" style="float: left">
+                <div class="col-sm-12">
+                    <dl class="dl-horizontal">
+                        <dt>舆情来源：</dt>
+                        <dd id="yqly">{{data.yqly}}
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row" style="float: right;padding-right: 10px">
+                <div class="col-sm-12">
+                    <dl class="dl-horizontal">
+                        <dt>获取时间：</dt>
+                        <dd>2020-09-04
+                    </dl>
+                </div>
+            </div>
+            <div style=" clear:both;"></div>
+        </div>
+<!--        <div style="margin: 0 auto;width: 92%;border-bottom: 0.5px solid grey;padding-top: 10px"></div>
+        <div class="ibox-content" style="font-size:18px;padding-top: 30px;
+                             padding-left: 20px;padding-right: 50px">
+            <div class="row" style="float: left">
+                <div class="col-sm-12">
+                    <dl class="dl-horizontal">
+                        <dt>舆情摘要：</dt>
+                        <dd>追尾驾驶员还被困在车内,G15沈海高速往上海方向石子山隧尾驾驶员还被困在车内,G15沈海高速往上海方向石子山隧
+                            道内发生三车追尾事故,辅警裘为军在询问驾驶员李某无胸 ...全文
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div style=" clear:both;"></div>
+        </div>-->
+        <div style="margin: 0 auto;width: 92%;border-bottom: 0.5px solid grey;padding-top: 10px"></div>
+        <div class="ibox-content" style="font-size:18px;padding-top: 30px;
+                             padding-left: 20px;padding-right: 50px">
+            <div class="row" style="float: left">
+                <div class="col-sm-12">
+                    <dl class="dl-horizontal">
+                        <dt>正文信息：</dt>
+                        <dd>{{data.yqnr}}}
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div style=" clear:both;"></div>
+        </div>
+        <div style="margin: 0 auto;width: 92%;border-bottom: 0.5px solid grey;padding-top: 10px"></div>
+        <div class="ibox-content" style="font-size:18px;padding-top: 30px;
+                             padding-bottom: 100px;padding-left: 20px;padding-right: 50px">
+            <div class="row" style="float: left">
+                <div class="col-sm-12">
+                    <dl class="dl-horizontal">
+                        <dt>舆情人名：</dt>
+                        <dd>{{data.yqrm}}
+                        </dd>
+
+                    </dl>
+                </div>
+                <div class="col-sm-12">
+                    <dl class="dl-horizontal">
+                        <dt>舆情地名：</dt>
+                        <dd>{{data.yqdm}}
+                        </dd>
+
+                    </dl>
+                </div>
+        </div>
+    </div>
+</body>
+<script>
+    var id= window.location.href.split("?")[1].split("=")[1];
+    console.log(id)
+    // $("#yqly").text("Hello world!");
+</script>
+</html>
